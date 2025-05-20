@@ -70,8 +70,6 @@
 			pavucontrol
 			pulseaudio
 			pamixer
-# # celeste
-#                        everest-mons
 
 # Screenshotting
 			hyprshot
@@ -82,9 +80,6 @@
 
 	fonts.packages = with pkgs; [
 		jetbrains-mono
-			#noto-fonts
-			#noto-fonts-emoji
-			#twemoji-color-font
 			font-awesome
 			nerd-fonts.jetbrains-mono
 			powerline-fonts
