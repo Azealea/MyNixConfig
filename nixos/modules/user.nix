@@ -4,7 +4,7 @@
   users = {
     defaultUserShell = pkgs.zsh;
 
-    users.pedro = {
+    users.azea = {
       isNormalUser = true;
       extraGroups = [ "networkmanager" "wheel" "input" "libvirtd" ];
       packages = with pkgs; [];

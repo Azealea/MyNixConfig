@@ -15,7 +15,7 @@
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 	programs.steam.enable = true;
-	
+
 	networking.hostName = "nixos";
 
 	time.timeZone = "Europe/Paris";
