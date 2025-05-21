@@ -31,6 +31,7 @@
                         llvmPackages_latest.clang-tools
                         meld
 # CLI utils
+#                        zsh-powerlevel10k
                         tig
 			tmate
 			neofetch
