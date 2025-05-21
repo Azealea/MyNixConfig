@@ -13,7 +13,7 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, zen-browser, ... }@inputs:
 
     let
       system = "x86_64-linux";
@@ -23,6 +23,7 @@
       modules = [
         ./nixos/configuration.nix
       ];
+      specialArgs = { inherit inputs; };
     };
 
     homeConfigurations.azea = home-manager.lib.homeManagerConfiguration {
