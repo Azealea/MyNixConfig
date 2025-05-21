@@ -7,6 +7,7 @@
     ./hyprland
     ./waybar
     ./zsh.nix
-	./vim.nix
+     ./vim.nix
+     ./kitty.nix
   ];
 }
