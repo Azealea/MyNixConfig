@@ -15,11 +15,11 @@ in {
     settings = {
       # Cursor configuration
       cursor_shape = "beam";     # Options: block, beam, underline
-      cursor_blink_interval = 0.6;    # Seconds (0 to disable blinking)
+      cursor_blink_interval = 1;    # Seconds (0 to disable blinking)
       cursor_stop_blinking_after = 15;
       cursor_trail = 3;
+      cursor_trail_decay =  "0.2 0.6";
 
-      # Appearance
       background_opacity = "0.90";
       enable_audio_bell = false;
       confirm_os_window_close = 0;
