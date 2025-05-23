@@ -96,8 +96,8 @@
       };
 
       misc = {
-        force_default_wallpaper = 0;
-        disable_hyprland_logo = true;
+        #force_default_wallpaper = 0;
+        #disable_hyprland_logo = true;
       };
 
       windowrulev2 = [
@@ -107,12 +107,8 @@
         "move 990 60,size 900 170,pin,noinitialfocus,class:(showmethekey-gtk)"
         "noborder,nofocus,class:(showmethekey-gtk)"
 
-        "workspace 3,class:(obsidian)"
-        "workspace 3,class:(zathura)"
-        "workspace 4,class:(com.obsproject.Studio)"
-        "workspace 5,class:(telegram)"
-        "workspace 5,class:(vesktop)"
-        "workspace 6,class:(teams-for-linux)"
+        "workspace 4,class:(obsidian)"
+        "workspace 5,class:(discord)"
 
         "suppressevent maximize, class:.*"
         "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"

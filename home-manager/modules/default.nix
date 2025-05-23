@@ -2,6 +2,7 @@
   imports = [
     ./cursor.nix
     ./git.nix
+    ./wofi.nix
 #   ./qt.nix
     ./hyprland
     ./waybar

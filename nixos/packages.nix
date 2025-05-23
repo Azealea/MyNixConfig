@@ -10,6 +10,7 @@
 		kitty
 #			rofi
 			wofi
+                        vscode
 			discord
 			gparted
 			obsidian
