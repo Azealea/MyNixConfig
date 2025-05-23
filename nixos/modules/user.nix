@@ -6,7 +6,7 @@
 
     users.azea = {
       isNormalUser = true;
-      extraGroups = [ "networkmanager" "wheel" "input" "libvirtd" ];
+      extraGroups = [ "networkmanager" "wheel" "input" "libvirtd" "docker"];
       packages = with pkgs; [];
     };
   };
