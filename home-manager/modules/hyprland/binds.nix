@@ -37,6 +37,8 @@ in {
       "$mainMod,       N, exec, swaync-client -t"
       ", Print, exec, grimblast --notify --freeze copysave area"
       "$mainMod,       W, exec, ${booksScript}/bin/open_books"
+      "$mainMod,       P, exec, hyprshot -m region -o ~/Img"
+      "$mainMod,       P, exec, hyprshot -m output -m active -o ~/Img"
 
       # Moving focus
       "$mainMod, left, movefocus, l"
@@ -93,8 +95,8 @@ in {
       "$mainMod SHIFT, 0, movetoworkspacesilent, 10"
 
       # Scratchpad
-      "$mainMod,       S, togglespecialworkspace,  magic"
-      "$mainMod SHIFT, S, movetoworkspace, special:magic"
+      # "$mainMod,       S, togglespecialworkspace,  magic"
+      # "$mainMod SHIFT, S, movetoworkspace, special:magic"
     ];
 
     # Move/resize windows with mainMod + LMB/RMB and dragging
