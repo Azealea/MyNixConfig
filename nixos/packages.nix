@@ -7,17 +7,17 @@
 	environment.systemPackages = with pkgs; [
 # Desktop apps
 
-		kitty
-#			rofi
-			wofi
+    		        kitty
+			rofi
+#			wofi
                         vscode
 			discord
 			gparted
 			obsidian
 			vim
-			firefox
                         kdePackages.dolphin
 			prismlauncher
+			dunst
 
 # Coding stuff
 			gnumake
@@ -30,10 +30,11 @@
                         llvmPackages_latest.libclang
                         llvmPackages_latest.lld
                         llvmPackages_latest.clang-tools
-                        meld
+
 # CLI utils
 #                        zsh-powerlevel10k
                         tig
+                        meld
 			tmate
 			neofetch
 			file
@@ -47,21 +48,11 @@
 			nix-search
 			bluez
 			bluez-tools
-			dunst
 
 # REALLY IMPORTANT STUFF DONT TOUCH
-			qt6.qtbase # required for running sddm
-			qt6.qtsvg
-			qt6.qtvirtualkeyboard
-			qt6.qtmultimedia
-			qt5.qtwayland
-			qt6.qtwayland
-			libsForQt5.qt5.qtquickcontrols2
-			libsForQt5.qt5.qtgraphicaleffects
-			libsForQt5.qt5.qtsvg
 
 # Wayland stuff
-			xwayland
+                        #xwayland
 			wl-clipboard
 			cliphist
 			waybar
@@ -75,6 +66,7 @@
 
 # Screenshotting
 			hyprshot
+                        hyprpicker
 
 # Other
 			home-manager
