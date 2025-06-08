@@ -49,10 +49,11 @@
 			bluez
 			bluez-tools
 
-# REALLY IMPORTANT STUFF DONT TOUCH
+# REALLY IMPORTANT STUFF DONT TOUCH UNLESS U KNOW WHAT TO DO
 
 # Wayland stuff
                         #xwayland
+                        swww
 			wl-clipboard
 			cliphist
 			waybar
