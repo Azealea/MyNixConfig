@@ -1,46 +1,62 @@
 window {
-  font-family: "JetBrainsMono Nerd Font";
-  font-size: 16px;
-  background-color: transparent;
-  margin: 0px;
-  padding: 0px;
-}
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 10pt;
 
-#main {
-  background-color: rgba(30, 30, 46, 0.9);
-  border-radius: 12px;
-  padding: 0;
-  box-shadow: 0 0 30px rgba(0,0,0,0.6);
-  border: 2px solid rgba(100, 100, 100, 0.4);
-  display: flex;
-  flex-direction: row;
-}
-
-#img {
-  background-image: url("/home/youruser/.config/wofi/bg.jpg");
-  background-size: cover;
-  background-position: center;
-  width: 300px;
-  border-top-left-radius: 12px;
-  border-bottom-left-radius: 12px;
+    background-color: rgba(0, 0, 0, 0.0); /* Transparent */
+    border: none;
+    padding: 0;
+    margin: 0;
 }
 
 #input {
-  margin: 10px;
-  padding: 8px;
-  background-color: #1e1e2e;
-  border-radius: 8px;
-  color: white;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    background-image: url("~/nixMine/Wallpaper/frieren.jpg");
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
 }
 
 #entry {
-  padding: 10px;
-  margin: 5px;
-  border-radius: 8px;
-  background-color: rgba(60, 60, 80, 0.6);
+    padding: 0.5em;
+    margin: 0.5em;
+    color: #ffffff;
+    background-color: transparent;
 }
 
 #entry:selected {
-  background-color: rgba(100, 100, 160, 0.8);
+    background-color: rgba(100, 100, 255, 0.2);
+    color: #ffffff; /* @select-fg */
 }
+
+#outer-box {
+    padding: 0;
+    margin: 0;
+}
+
+#scroll {
+    padding: 1em 2em;
+    background-color: rgba(20, 20, 20, 0.7);
+}
+
+#text {
+    padding-left: 1em;
+    color: #ffffff; /* @main-fg */
+}
+
+#img {
+    margin-right: 1em;
+    background-color: transparent;
+    size: 2.2em;
+}
+
+/* Optional: error message style
+#error {
+    color: #ffffff;
+    background-color: rgba(20, 20, 20, 0.8);
+    text-transform: capitalize;
+    padding: 1em;
+    text-align: center;
+} */
 
