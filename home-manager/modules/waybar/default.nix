@@ -135,7 +135,7 @@
         };
 
         "hyprland/window"= {
-          "format"= "  {}";
+          "format"= "  {}";
           "separate-outputs"= true;
           "rewrite"= {
             "khing@archlinux=(.*)"= "$1 ";
