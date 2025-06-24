@@ -23,5 +23,5 @@ fi
 
 echo "$INDEX" > "$STATE_FILE"
 
-swww img "${WALLPAPERS[$INDEX]}" --transition-type simple --transition-duration 3
+swww img "${WALLPAPERS[$INDEX]}" --transition-type any --transition-duration 3
 # types  : center , random , simple, any
