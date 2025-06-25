@@ -34,6 +34,6 @@
 		LC_TIME = "fr_FR.UTF-8";
 	};
 
-	system.stateVersion = "24.11"; # DONT CHANGE THiS
+	system.stateVersion = "25.05"; # DONT CHANGE THiS
 
 }

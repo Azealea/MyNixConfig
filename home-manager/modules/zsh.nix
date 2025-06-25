@@ -8,7 +8,7 @@
 
     shellAliases = {
       rb = "sudo nixos-rebuild switch --flake ${configDir}";
-      upd = "nix flake update ${configDir}";
+      upd = "nix flake update --flake ${configDir}";
       upg = "sudo nixos-rebuild switch --upgrade --flake ${configDir}";
 
       hms = "home-manager switch --flake ${configDir}";
