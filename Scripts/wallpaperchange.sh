@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-WALLPAPER_DIR="$HOME/nixMine/Wallpaper"
+WALLPAPER_DIR="$CONFIG_DIR/Wallpaper"
 STATE_FILE="/tmp/.current_wallpaper_index"
 DIRECTION="$1"
 

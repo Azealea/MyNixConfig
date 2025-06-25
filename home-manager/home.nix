@@ -1,4 +1,4 @@
-{username, ...} :
+{username, configDir, ...} :
 {
   imports = [
     ./modules
@@ -12,6 +12,7 @@
 
   home.sessionVariables = {
     PATH = "$HOME/.local/bin:$PATH";
+    CONFIG_DIR = configDir;
   };
 
 #  home.file.".local/bin/brightnesscontrol.sh".text = ''

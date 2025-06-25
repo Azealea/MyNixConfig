@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, configDir, ... }:
 let
   booksDir = "$HOME/Downloads/books";
   booksScript = pkgs.writeScriptBin "open_books" ''
@@ -39,8 +39,8 @@ in {
       "$mainMod,       W, exec, ${booksScript}/bin/open_books"
       "$mainMod,       P, exec, hyprshot -m region -o ~/Img"
       "$mainMod,       P, exec, hyprshot -m output -m active -o ~/Img"
-      "$mainMod ALT_LEFT, left, exec, ~/nixMine/Scripts/wallpaperchange.sh prev"
-      "$mainMod ALT_LEFT, right, exec, ~/nixMine/Scripts/wallpaperchange.sh next"
+      "$mainMod ALT_LEFT, left, exec, ${configDir}/Scripts/wallpaperchange.sh prev"
+      "$mainMod ALT_LEFT, right, exec, ${configDir}/Scripts/wallpaperchange.sh next"
 
       # Moving focus
       "$mainMod, left, movefocus, l"

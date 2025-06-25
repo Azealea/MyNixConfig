@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, configDir, ... }: {
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -6,18 +6,15 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
-    shellAliases =
-      let
-        flakeDir = "~/nixMine";
-      in {
-      rb = "sudo nixos-rebuild switch --flake ${flakeDir}";
-      upd = "nix flake update ${flakeDir}";
-      upg = "sudo nixos-rebuild switch --upgrade --flake ${flakeDir}";
+    shellAliases = {
+      rb = "sudo nixos-rebuild switch --flake ${configDir}";
+      upd = "nix flake update ${configDir}";
+      upg = "sudo nixos-rebuild switch --upgrade --flake ${configDir}";
 
-      hms = "home-manager switch --flake ${flakeDir}";
+      hms = "home-manager switch --flake ${configDir}";
 
-      conf = "nvim ${flakeDir}/nixos/configuration.nix";
-      pkgs = "nvim ${flakeDir}/nixos/packages.nix";
+      conf = "nvim ${configDir}/nixos/configuration.nix";
+      pkgs = "nvim ${configDir}/nixos/packages.nix";
 
       ll = "ls -l";
     };
