@@ -1,11 +1,12 @@
+{username, ...} :
 {
   imports = [
     ./modules
   ];
 
   home = {
-    username = "azea";
-    homeDirectory = "/home/azea";
+    username = username;
+    homeDirectory = "/home/${username}";
     stateVersion = "25.05";
   };
 

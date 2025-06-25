@@ -17,18 +17,21 @@
 
     let
       system = "x86_64-linux";
+      username = "azea";
     in {
+
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       inherit system;
       modules = [
         ./nixos/configuration.nix
       ];
-      specialArgs = { inherit inputs; };
+      specialArgs = { inherit inputs username; };
     };
 
-    homeConfigurations.azea = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.${system};
       modules = [ ./home-manager/home.nix ];
+      extraSpecialArgs = { inherit inputs username; };
     };
   };
 }
