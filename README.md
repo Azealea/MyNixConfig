@@ -2,10 +2,13 @@
 
 ## First instalation
 
+Its simpler if the repo is directly in the $HOME directory
+
 change global variable in flake.nix:
 - username
-- configDir : the path to the config folder ( not always a necessary change )
+- configDir : the path to the config folder ( if you dont put the repo in $HOME )
 
+cp /etc/nixos/hardware-configuration.nix ~/MyNixConfig/
 
 ## TODO
 
