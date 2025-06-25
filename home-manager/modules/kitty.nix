@@ -20,7 +20,7 @@ in {
       cursor_trail = 3;
       cursor_trail_decay =  "0.2 0.6";
 
-      background_opacity = "0.90";
+      background_opacity = "1"; # between 0 and 1
       enable_audio_bell = false;
       confirm_os_window_close = 0;
       hide_window_decorations = "yes";
