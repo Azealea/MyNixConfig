@@ -18,6 +18,7 @@
                         kdePackages.dolphin
 			prismlauncher
 			dunst
+                        networkmanagerapplet
 
 # Coding stuff
 			gnumake

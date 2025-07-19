@@ -9,5 +9,6 @@
      ./vim.nix
      ./kitty.nix
      ./wofi/wofi.nix
+    ./gtk.nix
   ];
 }
