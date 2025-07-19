@@ -21,6 +21,7 @@
                         networkmanagerapplet
 
 # Coding stuff
+                        man-pages
 			gnumake
 			gcc
 			bear
