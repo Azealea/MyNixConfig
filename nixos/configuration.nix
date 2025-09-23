@@ -11,6 +11,10 @@
 			./packages.nix
 			./modules
 		];
+                services.printing.enable = true;
+
+                services.printing.drivers = [ pkgs.hplipWithPlugin ];
+
 
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
 

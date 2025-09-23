@@ -10,10 +10,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    nvf.url = "github:notashelf/nvf";
 
   };
 
-  outputs = { self, nixpkgs, home-manager, zen-browser, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, zen-browser, nvf, ... }@inputs:
 
     let
       system = "x86_64-linux";
@@ -25,6 +26,7 @@
       inherit system;
       modules = [
         ./nixos/configuration.nix
+        nvf.nixosModules.default
       ];
       specialArgs = { inherit inputs username configDir; };
     };
@@ -36,3 +38,4 @@
     };
   };
 }
+

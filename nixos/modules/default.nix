@@ -5,6 +5,6 @@
     ./desktop
     ./user.nix
     ./zen.nix
-#    ./nixvim/nixvim.nix
+    ./nvf-vim.nix
   ];
 }

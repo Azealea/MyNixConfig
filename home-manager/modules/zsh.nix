@@ -11,12 +11,13 @@
       upd = "nix flake update --flake ${configDir}";
       upg = "sudo nixos-rebuild switch --upgrade --flake ${configDir}";
 
-      hms = "home-manager switch --flake ${configDir}";
+      hms = "home-manager switch --flake ${configDir} -b backupdeleteme";
 
       conf = "nvim ${configDir}/nixos/configuration.nix";
       pkgs = "nvim ${configDir}/nixos/packages.nix";
 
       ll = "ls -l";
+      v = "nvim";
     };
 
     history.size = 10000;
