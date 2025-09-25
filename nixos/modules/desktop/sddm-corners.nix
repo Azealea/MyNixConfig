@@ -1,6 +1,4 @@
-{
-  pkgs, ...
-}:
+{pkgs, ...}:
 pkgs.stdenv.mkDerivation {
   pname = "sddm-corners-theme";
   name = "Corners";

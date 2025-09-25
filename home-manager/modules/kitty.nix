@@ -1,6 +1,9 @@
-{ config, lib, pkgs, ... }:
-
-let
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
   fontFamily = "FiraCode Nerd Font";
   fontSize = 12;
 in {
@@ -14,11 +17,11 @@ in {
 
     settings = {
       # Cursor configuration
-      cursor_shape = "beam";     # Options: block, beam, underline
-      cursor_blink_interval = 1;    # Seconds (0 to disable blinking)
+      cursor_shape = "beam"; # Options: block, beam, underline
+      cursor_blink_interval = 1; # Seconds (0 to disable blinking)
       cursor_stop_blinking_after = 15;
       cursor_trail = 3;
-      cursor_trail_decay =  "0.2 0.6";
+      cursor_trail_decay = "0.2 0.6";
 
       background_opacity = "1"; # between 0 and 1
       enable_audio_bell = false;

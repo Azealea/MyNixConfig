@@ -4,6 +4,6 @@
     ./zram.nix
     ./trim.nix
     ./env.nix
-#   ./virtmanager.nix
+    #   ./virtmanager.nix
   ];
 }

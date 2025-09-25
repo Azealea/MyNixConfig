@@ -4,9 +4,8 @@
     style = ./style.css;
     settings = {
       mainBar = {
-
         layer = "top";
-        output = [ "eDP-1" ];
+        output = ["eDP-1"];
         position = "top";
         mod = "dock";
         height = 28;
@@ -19,301 +18,301 @@
         modules-center = ["custom/padd" "custom/l_end" "hyprland/workspaces" "hyprland/window" "custom/r_end" "custom/padd"];
         modules-right = ["custom/padd" "custom/l_end" "backlight" "network" "pulseaudio" "pulseaudio#microphone" "custom/updates" "custom/keybindhint" "custom/r_end" "custom/l_end" "privacy" "tray" "battery" "custom/r_end" "custom/l_end" "custom/wallchange" "custom/theme" "custom/wbar" "custom/cliphist" "custom/power" "custom/r_end" "custom/padd"];
 
-        "cpu"= {
-          "interval"= 10;
-          "format"= "󰍛 {usage}%";
-          "format-alt"= "{icon0}{icon1}{icon2}{icon3}";
-          "format-icons"= ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
+        "cpu" = {
+          "interval" = 10;
+          "format" = "󰍛 {usage}%";
+          "format-alt" = "{icon0}{icon1}{icon2}{icon3}";
+          "format-icons" = ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
         };
 
-        "memory"= {
-          "states"= {
-            "c"= 90; # critical
-            "h"= 60; # high
-            "m"= 30; # medium
+        "memory" = {
+          "states" = {
+            "c" = 90; # critical
+            "h" = 60; # high
+            "m" = 30; # medium
           };
-          "interval"= 30;
-          "format"= "󰾆 {used}GB";
-          "format-m"= "󰾅 {used}GB";
-          "format-h"= "󰓅 {used}GB";
-          "format-c"= " {used}GB";
-          "format-alt"= "󰾆 {percentage}%";
-          "max-length"= 10;
-          "tooltip"= true;
-          "tooltip-format"= "󰾆 {percentage}%\n {used:0.1f}GB/{total:0.1f}GB";
+          "interval" = 30;
+          "format" = "󰾆 {used}GB";
+          "format-m" = "󰾅 {used}GB";
+          "format-h" = "󰓅 {used}GB";
+          "format-c" = " {used}GB";
+          "format-alt" = "󰾆 {percentage}%";
+          "max-length" = 10;
+          "tooltip" = true;
+          "tooltip-format" = "󰾆 {percentage}%\n {used:0.1f}GB/{total:0.1f}GB";
         };
 
-        "custom/cpuinfo"= {
-          "exec"= " cpuinfo.sh";
-          "return-type"= "json";
-          "format"= "{}";
-          "interval"= 10; # once every 10 seconds
-          "tooltip"= true;
-          "max-length"= 1000;
+        "custom/cpuinfo" = {
+          "exec" = " cpuinfo.sh";
+          "return-type" = "json";
+          "format" = "{}";
+          "interval" = 10; # once every 10 seconds
+          "tooltip" = true;
+          "max-length" = 1000;
         };
 
-        "custom/gpuinfo"= {
-          "exec"= " gpuinfo.sh";
-          "return-type"= "json";
-          "format"= "{}";
-          "interval"= 10; # once every 10 seconds
-          "tooltip"= true;
-          "max-length"= 1000;
-          "on-click"= "gpuinfo.sh --toggle";
+        "custom/gpuinfo" = {
+          "exec" = " gpuinfo.sh";
+          "return-type" = "json";
+          "format" = "{}";
+          "interval" = 10; # once every 10 seconds
+          "tooltip" = true;
+          "max-length" = 1000;
+          "on-click" = "gpuinfo.sh --toggle";
         };
 
-        "custom/gpuinfo#nvidia"= {
-          "exec"= " gpuinfo.sh --use nvidia ";
-          "return-type"= "json";
-          "format"= "{}";
-          "interval"= 10; # once every 10 seconds
-          "tooltip"= true;
-          "max-length"= 1000;
+        "custom/gpuinfo#nvidia" = {
+          "exec" = " gpuinfo.sh --use nvidia ";
+          "return-type" = "json";
+          "format" = "{}";
+          "interval" = 10; # once every 10 seconds
+          "tooltip" = true;
+          "max-length" = 1000;
         };
 
-        "custom/gpuinfo#amd"= {
-          "exec"= " gpuinfo.sh --use amd ";
-          "return-type"= "json";
-          "format"= "{}";
-          "interval"= 10; # once every 10 seconds
-          "tooltip"= true;
-          "max-length"= 1000;
+        "custom/gpuinfo#amd" = {
+          "exec" = " gpuinfo.sh --use amd ";
+          "return-type" = "json";
+          "format" = "{}";
+          "interval" = 10; # once every 10 seconds
+          "tooltip" = true;
+          "max-length" = 1000;
         };
 
-        "custom/gpuinfo#intel"= {
-          "exec"= " gpuinfo.sh --use intel ";
-          "return-type"= "json";
-          "format"= "{}";
-          "interval"= 10; # once every 10 seconds
-          "tooltip"= true;
-          "max-length"= 1000;
+        "custom/gpuinfo#intel" = {
+          "exec" = " gpuinfo.sh --use intel ";
+          "return-type" = "json";
+          "format" = "{}";
+          "interval" = 10; # once every 10 seconds
+          "tooltip" = true;
+          "max-length" = 1000;
         };
 
-        "idle_inhibitor"= {
-          "format"= "{icon}";
-          "format-icons"= {
-            "activated"= "󰅶 ";
-            "deactivated"= "󰛊 ";
+        "idle_inhibitor" = {
+          "format" = "{icon}";
+          "format-icons" = {
+            "activated" = "󰅶 ";
+            "deactivated" = "󰛊 ";
           };
-          "tooltip-format-activated"="Caffeine Mode Active";
-          "tooltip-format-deactivated"="Caffeine Mode Inactive";
+          "tooltip-format-activated" = "Caffeine Mode Active";
+          "tooltip-format-deactivated" = "Caffeine Mode Inactive";
         };
 
-        "clock"= {
-          "format"= "{:%I:%M %p}";
-          "format-alt"= "{:%R 󰃭 %d·%m·%y}";
-          "tooltip-format"= "<span>{calendar}</span>";
-          "calendar"= {
-            "mode"= "month";
-            "mode-mon-col"= 3;
-            "on-scroll"= 1;
-            "on-click-right"= "mode";
-            "format"= {
-              "months"= "<span color='#ffead3'><b>{}</b></span>";
-              "weekdays"= "<span color='#ffcc66'><b>{}</b></span>";
-              "today"= "<span color='#ff6699'><b>{}</b></span>";
+        "clock" = {
+          "format" = "{:%I:%M %p}";
+          "format-alt" = "{:%R 󰃭 %d·%m·%y}";
+          "tooltip-format" = "<span>{calendar}</span>";
+          "calendar" = {
+            "mode" = "month";
+            "mode-mon-col" = 3;
+            "on-scroll" = 1;
+            "on-click-right" = "mode";
+            "format" = {
+              "months" = "<span color='#ffead3'><b>{}</b></span>";
+              "weekdays" = "<span color='#ffcc66'><b>{}</b></span>";
+              "today" = "<span color='#ff6699'><b>{}</b></span>";
             };
           };
-          "actions"= {
-            "on-click-right"= "mode";
-            "on-click-forward"= "tz_up";
-            "on-click-backward"= "tz_down";
-            "on-scroll-up"= "shift_up";
-            "on-scroll-down"= "shift_down";
-          };
-        };
-
-        "hyprland/workspaces"= {
-          "disable-scroll"= true;
-          "all-outputs"= true;
-          "active-only"= false;
-          "on-click"= "activate";
-          "on-scroll-up"= "hyprctl dispatch workspace -1";
-          "on-scroll-down"= "hyprctl dispatch workspace +1";
-          "persistent-workspaces"= {
+          "actions" = {
+            "on-click-right" = "mode";
+            "on-click-forward" = "tz_up";
+            "on-click-backward" = "tz_down";
+            "on-scroll-up" = "shift_up";
+            "on-scroll-down" = "shift_down";
           };
         };
 
-        "hyprland/window"= {
-          "format"= "  {}";
-          "separate-outputs"= true;
-          "rewrite"= {
-            "khing@archlinux=(.*)"= "$1 ";
-            "(.*) — Mozilla Firefox"= "$1 󰈹";
-            "(.*)Mozilla Firefox"= "Firefox 󰈹";
-            "(.*) - Visual Studio Code"= "$1 󰨞";
-            "(.*)Visual Studio Code"= "Code 󰨞";
-            "(.*) - Code - OSS"= "$1 󰨞";
-            "(.*)Code - OSS"= "Code 󰨞";
-            "(.*) — Dolphin"= "$1 󰉋";
-            "(.*)Spotify"= "Spotify 󰓇";
-            "(.*)Steam"= "Steam 󰓓";
-            "(.*) - Discord"= "$1  ";
-            "(.*)Netflix"= "Netflix 󰝆 ";
-            "(.*) — Google chrome"= "$1  ";
-            "(.*)Google chrome"= "Google chrome  ";
-            "(.*) — Github"= "$1  ";
-            "(.*)Github"= "Github ";
-            "(.*)Spotify Free"= "Spotify 󰓇";
-            "(.*)Spotify Premiun"= "Spotify 󰓇";
-          };
-          "max-length"= 50;
-        };
-
-        "backlight"= {
-          "device"= "intel_backlight";
-          "format"= "{icon} {percent}%";
-          "format-icons"= ["" "" "" "" "" "" "" "" ""];
-          "tooltip-format"= "{icon} {percent}% ";
-          "on-scroll-up"= "brightnesscontrol.sh i 1";
-          "on-scroll-down"= "brightnesscontrol.sh d 1";
-          "min-length"= 6;
-        };
-
-        "network"= {
-          "tooltip"= true;
-          "format-wifi"= " ";
-          "format-ethernet"= "󰈀 ";
-          "tooltip-format"= "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>";
-          "format-linked"= "󰈀 {ifname} (No IP)";
-          "format-disconnected"= "󰖪 ";
-          "tooltip-format-disconnected"= "Disconnected";
-          "format-alt"= "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>";
-          "interval"= 2;
-        };
-
-        "pulseaudio"= {
-          "format"= "{icon} {volume}";
-          "format-muted"= "󰖁";
-          "on-click"= "pavucontrol -t 3";
-          "on-click-right"= "volumecontrol.sh -s ''";
-          "on-click-middle"= "volumecontrol.sh -o m";
-          "on-scroll-up"= "volumecontrol.sh -o i";
-          "on-scroll-down"= "volumecontrol.sh -o d";
-          "tooltip-format"= "{icon} {desc} // {volume}%";
-          "scroll-step"= 5;
-          "format-icons"= {
-            "headphone"= "";
-            "hands-free"= "";
-            "headset"= "";
-            "phone"= "";
-            "portable"= "";
-            "default"= ["" "" ""];
+        "hyprland/workspaces" = {
+          "disable-scroll" = true;
+          "all-outputs" = true;
+          "active-only" = false;
+          "on-click" = "activate";
+          "on-scroll-up" = "hyprctl dispatch workspace -1";
+          "on-scroll-down" = "hyprctl dispatch workspace +1";
+          "persistent-workspaces" = {
           };
         };
-            # "" "" "󰍮"; 
-            "pulseaudio#microphone"= {
-              "format"= "{format_source}";
-              "format-source"= "";
-              "format-source-muted"= "";
-              "on-click"= "pavucontrol -t 4";
-              "on-click-middle"= "volumecontrol.sh -i m";
-              "on-scroll-up"= "volumecontrol.sh -i i";
-              "on-scroll-down"= "volumecontrol.sh -i d";
-              "tooltip-format"= "{format_source} {source_desc} // {source_volume}%";
-              "scroll-step"= 5;
-            };
 
-            "custom/updates"= {
-              "exec"= "systemupdate.sh";
-              "return-type"= "json";
-              "format"= "{}";
-              "on-click"= "hyprctl dispatch exec 'systemupdate.sh up'";
-              "interval"= 86400;# // once every day
-              "tooltip"= true;
-              "signal"= 20;
-            };
-            "custom/keybindhint"= {
-              "format"= " ";
-              "tooltip-format"= " Keybinds";
-              "on-click"= "keybinds_hint.sh";
-            };
-
-            "privacy"= {
-              "icon-size"= 12;
-              "icon-spacing"= 5;
-              "transition-duration"= 250;
-              "modules"= [
-                {
-                  "type"= "screenshare";
-                  "tooltip"= true;
-                  "tooltip-icon-size"= 24;
-                }
-                {
-                  "type"= "audio-in";
-                  "tooltip"= true;
-                  "tooltip-icon-size"= 24;
-                }
-              ];
-            };
-
-            "tray"= {
-              "icon-size"= 16;
-              "spacing"= 5;
-            };
-
-            "battery"= {
-              "states"= {
-                "good"= 95;
-                "warning"= 30;
-                "critical"= 20;
-              };
-              "format"= "{icon} {capacity}%";
-              "format-charging"= " {capacity}%";
-              "format-plugged"= " {capacity}%";
-              "format-alt"= "{time} {icon}";
-              "format-icons"= ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
-            };
-
-            "custom/wallchange"= {
-              "format"= "{}";
-              "exec"= "echo ; echo 󰆊 switch wallpaper";
-              "on-click"= "swwwallpaper.sh -n";
-              "on-click-right"= "swwwallpaper.sh -p";
-              "on-click-middle"= "sleep 0.1 && swwwallselect.sh";
-              "interval" = 86400; # // once every day
-              "tooltip"= true;
-            };
-
-            "custom/theme"= {
-              "format"= "{}";
-              "exec"= "echo ; echo 󰟡 switch theme";
-              "on-click"= "themeswitch.sh -n";
-              "on-click-right"= "themeswitch.sh -p";
-              "on-click-middle"= "sleep 0.1 && themeselect.sh";
-              "interval" = 86400;# // once every day
-              "tooltip"= true;
-            };
-
-            "custom/wbar"= {
-              "format"= "{}";# //    //
-              "exec"= "echo ; echo  switch bar //  dock";
-              "on-click"= "wbarconfgen.sh n";
-              "on-click-right"= "wbarconfgen.sh p";
-              "on-click-middle"= "sleep 0.1 && quickapps.sh kitty firefox spotify code dolphin";
-              "interval" = 86400;
-              "tooltip"= true;
-            };
-
-            "custom/cliphist"= {
-              "format"= "{}";
-              "exec"= "echo ; echo 󰅇 clipboard history";
-              "on-click"= "sleep 0.1 && cliphist.sh -c";
-              "on-click-right"= "sleep 0.1 && cliphist.sh -d";
-              "on-click-middle"= "sleep 0.1 && cliphist.sh -w";
-              "interval" = 86400;# // once every day
-              "tooltip"= true;
-            };
-
-            "custom/power"= {
-              "format"= "{}";
-              "exec"= "echo ; echo  logout";
-              "on-click"= "logoutlaunch.sh 2";
-              "on-click-right"= "logoutlaunch.sh 1";
-              "interval" = 86400;# // once every day
-              "tooltip"= true;
-            };
+        "hyprland/window" = {
+          "format" = "  {}";
+          "separate-outputs" = true;
+          "rewrite" = {
+            "khing@archlinux=(.*)" = "$1 ";
+            "(.*) — Mozilla Firefox" = "$1 󰈹";
+            "(.*)Mozilla Firefox" = "Firefox 󰈹";
+            "(.*) - Visual Studio Code" = "$1 󰨞";
+            "(.*)Visual Studio Code" = "Code 󰨞";
+            "(.*) - Code - OSS" = "$1 󰨞";
+            "(.*)Code - OSS" = "Code 󰨞";
+            "(.*) — Dolphin" = "$1 󰉋";
+            "(.*)Spotify" = "Spotify 󰓇";
+            "(.*)Steam" = "Steam 󰓓";
+            "(.*) - Discord" = "$1  ";
+            "(.*)Netflix" = "Netflix 󰝆 ";
+            "(.*) — Google chrome" = "$1  ";
+            "(.*)Google chrome" = "Google chrome  ";
+            "(.*) — Github" = "$1  ";
+            "(.*)Github" = "Github ";
+            "(.*)Spotify Free" = "Spotify 󰓇";
+            "(.*)Spotify Premiun" = "Spotify 󰓇";
           };
+          "max-length" = 50;
+        };
+
+        "backlight" = {
+          "device" = "intel_backlight";
+          "format" = "{icon} {percent}%";
+          "format-icons" = ["" "" "" "" "" "" "" "" ""];
+          "tooltip-format" = "{icon} {percent}% ";
+          "on-scroll-up" = "brightnesscontrol.sh i 1";
+          "on-scroll-down" = "brightnesscontrol.sh d 1";
+          "min-length" = 6;
+        };
+
+        "network" = {
+          "tooltip" = true;
+          "format-wifi" = " ";
+          "format-ethernet" = "󰈀 ";
+          "tooltip-format" = "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>";
+          "format-linked" = "󰈀 {ifname} (No IP)";
+          "format-disconnected" = "󰖪 ";
+          "tooltip-format-disconnected" = "Disconnected";
+          "format-alt" = "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>";
+          "interval" = 2;
+        };
+
+        "pulseaudio" = {
+          "format" = "{icon} {volume}";
+          "format-muted" = "󰖁";
+          "on-click" = "pavucontrol -t 3";
+          "on-click-right" = "volumecontrol.sh -s ''";
+          "on-click-middle" = "volumecontrol.sh -o m";
+          "on-scroll-up" = "volumecontrol.sh -o i";
+          "on-scroll-down" = "volumecontrol.sh -o d";
+          "tooltip-format" = "{icon} {desc} // {volume}%";
+          "scroll-step" = 5;
+          "format-icons" = {
+            "headphone" = "";
+            "hands-free" = "";
+            "headset" = "";
+            "phone" = "";
+            "portable" = "";
+            "default" = ["" "" ""];
+          };
+        };
+        # "" "" "󰍮";
+        "pulseaudio#microphone" = {
+          "format" = "{format_source}";
+          "format-source" = "";
+          "format-source-muted" = "";
+          "on-click" = "pavucontrol -t 4";
+          "on-click-middle" = "volumecontrol.sh -i m";
+          "on-scroll-up" = "volumecontrol.sh -i i";
+          "on-scroll-down" = "volumecontrol.sh -i d";
+          "tooltip-format" = "{format_source} {source_desc} // {source_volume}%";
+          "scroll-step" = 5;
+        };
+
+        "custom/updates" = {
+          "exec" = "systemupdate.sh";
+          "return-type" = "json";
+          "format" = "{}";
+          "on-click" = "hyprctl dispatch exec 'systemupdate.sh up'";
+          "interval" = 86400; # // once every day
+          "tooltip" = true;
+          "signal" = 20;
+        };
+        "custom/keybindhint" = {
+          "format" = " ";
+          "tooltip-format" = " Keybinds";
+          "on-click" = "keybinds_hint.sh";
+        };
+
+        "privacy" = {
+          "icon-size" = 12;
+          "icon-spacing" = 5;
+          "transition-duration" = 250;
+          "modules" = [
+            {
+              "type" = "screenshare";
+              "tooltip" = true;
+              "tooltip-icon-size" = 24;
+            }
+            {
+              "type" = "audio-in";
+              "tooltip" = true;
+              "tooltip-icon-size" = 24;
+            }
+          ];
+        };
+
+        "tray" = {
+          "icon-size" = 16;
+          "spacing" = 5;
+        };
+
+        "battery" = {
+          "states" = {
+            "good" = 95;
+            "warning" = 30;
+            "critical" = 20;
+          };
+          "format" = "{icon} {capacity}%";
+          "format-charging" = " {capacity}%";
+          "format-plugged" = " {capacity}%";
+          "format-alt" = "{time} {icon}";
+          "format-icons" = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
+        };
+
+        "custom/wallchange" = {
+          "format" = "{}";
+          "exec" = "echo ; echo 󰆊 switch wallpaper";
+          "on-click" = "swwwallpaper.sh -n";
+          "on-click-right" = "swwwallpaper.sh -p";
+          "on-click-middle" = "sleep 0.1 && swwwallselect.sh";
+          "interval" = 86400; # // once every day
+          "tooltip" = true;
+        };
+
+        "custom/theme" = {
+          "format" = "{}";
+          "exec" = "echo ; echo 󰟡 switch theme";
+          "on-click" = "themeswitch.sh -n";
+          "on-click-right" = "themeswitch.sh -p";
+          "on-click-middle" = "sleep 0.1 && themeselect.sh";
+          "interval" = 86400; # // once every day
+          "tooltip" = true;
+        };
+
+        "custom/wbar" = {
+          "format" = "{}"; # //    //
+          "exec" = "echo ; echo  switch bar //  dock";
+          "on-click" = "wbarconfgen.sh n";
+          "on-click-right" = "wbarconfgen.sh p";
+          "on-click-middle" = "sleep 0.1 && quickapps.sh kitty firefox spotify code dolphin";
+          "interval" = 86400;
+          "tooltip" = true;
+        };
+
+        "custom/cliphist" = {
+          "format" = "{}";
+          "exec" = "echo ; echo 󰅇 clipboard history";
+          "on-click" = "sleep 0.1 && cliphist.sh -c";
+          "on-click-right" = "sleep 0.1 && cliphist.sh -d";
+          "on-click-middle" = "sleep 0.1 && cliphist.sh -w";
+          "interval" = 86400; # // once every day
+          "tooltip" = true;
+        };
+
+        "custom/power" = {
+          "format" = "{}";
+          "exec" = "echo ; echo  logout";
+          "on-click" = "logoutlaunch.sh 2";
+          "on-click-right" = "logoutlaunch.sh 1";
+          "interval" = 86400; # // once every day
+          "tooltip" = true;
         };
       };
-    }
+    };
+  };
+}

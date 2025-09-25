@@ -1,4 +1,8 @@
-{ pkgs, username ,... }: {
+{
+  pkgs,
+  username,
+  ...
+}: {
   programs.zsh.enable = true;
 
   users = {
@@ -6,9 +10,8 @@
 
     users.${username} = {
       isNormalUser = true;
-      extraGroups = [ "networkmanager" "wheel" "input" "libvirtd" "docker"];
+      extraGroups = ["networkmanager" "wheel" "input" "libvirtd" "docker"];
       packages = with pkgs; [];
     };
   };
-
 }

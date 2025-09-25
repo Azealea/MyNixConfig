@@ -1,4 +1,4 @@
-{ pkgs-stable, ... }: {
+{pkgs-stable, ...}: {
   # enables vm
   virtualisation.libvirtd.enable = true;
   programs.virt-manager = {
@@ -6,4 +6,3 @@
     package = pkgs-stable.virt-manager;
   };
 }
-
