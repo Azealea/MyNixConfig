@@ -1,6 +1,6 @@
 {
   imports = [
-    ./sddm.nix
+    ./display-manager.nix
     ./hyprland.nix
   ];
 }
