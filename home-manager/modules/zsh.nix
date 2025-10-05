@@ -17,6 +17,7 @@
       upg = "sudo nixos-rebuild switch --upgrade --flake ${configDir}";
 
       hms = "home-manager switch --flake ${configDir} -b backupdeleteme";
+      hmsb = "home-manager switch --flake ${configDir} -b backupdeleteme";
 
       conf = "nvim ${configDir}/nixos/configuration.nix";
       pkgs = "nvim ${configDir}/nixos/packages.nix";

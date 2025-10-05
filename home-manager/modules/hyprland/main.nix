@@ -20,10 +20,10 @@
       "$menu" = "wofi";
 
       exec-once = [
+        "swww-daemon"
         "waybar"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
-        "swww-daemon"
       ];
 
       general = {
@@ -39,6 +39,11 @@
 
         allow_tearing = false;
         layout = "master";
+      };
+
+      misc = {
+        background_color = "0x00000000";
+        disable_hyprland_logo = "true";
       };
 
       decoration = {
@@ -78,12 +83,9 @@
       input = {
         kb_layout = "us";
         kb_options = caps:escape;
-      };
-
-      gestures = {
-        workspace_swipe = true;
-        workspace_swipe_invert = false;
-        workspace_swipe_forever = true;
+        touchpad = {
+          natural_scroll = true;
+        };
       };
 
       dwindle = {
@@ -128,5 +130,10 @@
         "f[1], gapsout:0, gapsin:0"
       ];
     };
+
+    extraConfig = ''
+       gesture=3,horizontal,workspace
+       gesture=4,up,dispatcher,exec,hyprlock
+      '';
   };
 }

@@ -1,4 +1,4 @@
-# Nix Config
+# Nixos Config
 
 ## First instalation
 
@@ -12,13 +12,18 @@ cp /etc/nixos/hardware-configuration.nix ~/MyNixConfig/
 
 ## TODO
 
-- nicer dolphin theme
-- more scripts to have a better desktop experience:
+- [ ] nicer dolphin theme
+- [ ] more scripts to have a better desktop experience:
     - power profile selector
     - exit menu
-- configure rofi or wofi to have a better theme
-- better mouse icon
-
+- [ ] configure rofi or wofi to have a better theme
+- [ ] better mouse icon
+- [ ] another desktop manager
+- [ ] nvim lazy instead of nvf ?
+- [ ] bluetooth better widget
+- [ ] same for nm
+- [ ] cool widget that be funny
+- [ ] change ssdm for something else
 
 ## Known bugs
 
