@@ -35,11 +35,10 @@
     valgrind
     gdb
     lua
+    meld
 
     # CLI utils
-    #                        zsh-powerlevel10k
     tig
-    meld
     tmate
     neofetch
     file
@@ -57,13 +56,15 @@
     # REALLY IMPORTANT STUFF DONT TOUCH UNLESS U KNOW WHAT TO DO
 
     # Wayland stuff
-    #xwayland
     swww
     wl-clipboard
-    cliphist
     waybar
     hyprland
+
+    # utility
     brightnessctl
+    cliphist
+
     # Sound
     pipewire
     pavucontrol
@@ -74,7 +75,7 @@
     hyprshot
     hyprpicker
 
-    # Other
+    # home manager
     home-manager
   ];
 
