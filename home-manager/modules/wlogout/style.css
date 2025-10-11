@@ -1,0 +1,51 @@
+* {
+    background-image: none;
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 50px;
+    font-weight : 700;
+}
+
+@define-color wb-hvr-bg #f5c2e7;
+
+window {
+    background-color: transparent;
+}
+
+button {
+    background-color: rgba(70, 20, 140, 0.9);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;
+
+    border: none;
+    border-radius: 0px;
+    border-width: 0px;
+
+    box-shadow: none;
+    text-shadow: none;
+
+    margin: 5px;
+    color: black;
+}
+
+  button:hover { 
+    background-color: @wb-hvr-bg;
+    border-radius: 20px;
+    background-size: 40%;
+}
+
+#lock {
+    background-image: image(url("icons/lock.png"));
+}
+
+#reboot {
+    background-image: image(url("icons/reboot.png"));
+}
+
+#shutdown {
+    background-image: image(url("icons/shutdown.png"));
+}
+
+#hybernate {
+    background-image: image(url("icons/hybernate.png"));
+}

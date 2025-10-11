@@ -4,6 +4,7 @@
     ./cursor.nix
     ./hyprland
     ./waybar
+    ./wlogout/wlogout.nix
     ./vim.nix
     ./kitty.nix
     ./wofi/wofi.nix
