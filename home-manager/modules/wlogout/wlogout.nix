@@ -4,7 +4,7 @@
     layout = [
       {
         label = "lock";
-        action = "hyprlock";
+        action = "sleep 0.4 && hyprlock --grace 1";
         text = "  Lock  ";
         keybind = "l";
       }

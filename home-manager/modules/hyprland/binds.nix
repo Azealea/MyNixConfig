@@ -31,7 +31,7 @@ in {
       "$mainMod,       D, exec, $menu --show drun"
       "$mainMod,       P, pin,"
       "$mainMod,       J, togglesplit,"
-      "$mainMod,       E, exec, bemoji -cn"
+      "$mainMod SHIFT, E, exec, wlogout"
       "$mainMod,       V, exec, cliphist list | $menu --dmenu | cliphist decode | wl-copy"
       "$mainMod,       B, exec, pkill -SIGUSR2 waybar"
       "$mainMod SHIFT, B, exec, pkill -SIGUSR1 waybar"
@@ -41,7 +41,7 @@ in {
       ", Print, exec, grimblast --notify --freeze copysave area"
       "$mainMod,       W, exec, ${booksScript}/bin/open_books"
       "$mainMod,       P, exec, hyprshot -m region -o ~/Img"
-      "$mainMod,       P, exec, hyprshot -m output -m active -o ~/Img"
+      "$mainMod SHIFT, P, exec, hyprshot -m output -m active -o ~/Img"
       "$mainMod ALT_LEFT, left, exec, ${configDir}/Scripts/wallpaperchange.sh prev"
       "$mainMod ALT_LEFT, right, exec, ${configDir}/Scripts/wallpaperchange.sh next"
 
