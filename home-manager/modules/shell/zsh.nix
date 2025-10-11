@@ -23,7 +23,8 @@
       pkgs = "nvim ${configDir}/nixos/packages.nix";
 
       ll = "ls -l";
-      v = "nvim";
+      vi = "vim";
+      vim = "nvim";
     };
 
     history.size = 10000;
@@ -45,7 +46,6 @@
     oh-my-zsh = {
       enable = true;
       plugins = ["git" "sudo"];
-      # theme = "powerlevel10k/powerlevel10k";
     };
   };
   home.file."zsh/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme".source = "${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
