@@ -1,6 +1,14 @@
-{
-  programs.nix-search-tv.enable = true;
-  home.shellAliases = {
-    ns = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
-  };
+{pkgs, ...}: {
+  home.packages = with pkgs; [
+    (pkgs.writeShellApplication {
+      name = "ns";
+      runtimeInputs = with pkgs; [
+        fzf
+        (nix-search-tv.overrideAttrs {
+          env.GOEXPERIMENT = "jsonv2";
+        })
+      ];
+      text = ''exec "${pkgs.nix-search-tv.src}/nixpkgs.sh" "$@"'';
+    })
+  ];
 }
