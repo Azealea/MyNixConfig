@@ -49,7 +49,6 @@
     unzip
     bat
     zip
-    nix-search
     bluez
     bluez-tools
 
