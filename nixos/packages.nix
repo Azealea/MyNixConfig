@@ -57,8 +57,6 @@
     # Wayland stuff
     swww
     wl-clipboard
-    waybar
-    hyprland
 
     # utility
     brightnessctl
