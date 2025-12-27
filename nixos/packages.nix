@@ -26,7 +26,7 @@
     gcc
     bear
     nodejs
-    python
+    python3
     llvmPackages_latest.clang
     llvmPackages_latest.llvm
     llvmPackages_latest.libclang
