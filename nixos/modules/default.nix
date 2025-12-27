@@ -5,6 +5,7 @@
     ./desktop
     ./user.nix
     ./zen.nix
-    ./nvf-vim.nix
+    ./nvf_lazy.nix
+    ./nvf_lazy_maps.nix
   ];
 }
