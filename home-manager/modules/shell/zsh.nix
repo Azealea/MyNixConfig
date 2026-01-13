@@ -13,11 +13,10 @@
 
     shellAliases = {
       rb = "sudo nixos-rebuild switch --flake ${configDir}";
-      upd = "nix flake update --flake ${configDir}";
+      upd = "sudo nix flake update --flake ${configDir}";
       upg = "sudo nixos-rebuild switch --upgrade --flake ${configDir}";
 
       hms = "home-manager switch --flake ${configDir} -b backupdeleteme";
-      hmsb = "home-manager switch --flake ${configDir} -b backupdeleteme";
 
       conf = "nvim ${configDir}/nixos/configuration.nix";
       pkgs = "nvim ${configDir}/nixos/packages.nix";
@@ -46,6 +45,11 @@
     oh-my-zsh = {
       enable = true;
       plugins = ["git" "sudo"];
+      extraConfig = ''
+        autoload -Uz compinit
+          compinit
+          zstyle ':completion:*:*:*:*:files' ignored-patterns '*.o' '*.d'
+      '';
     };
   };
   home.file."zsh/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme".source = "${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
