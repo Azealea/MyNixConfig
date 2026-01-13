@@ -37,4 +37,4 @@ swww img "$NEW_WALLPAPER" --transition-type any --transition-duration 3
 mkdir -p "$HOME/.cache"
 ln -sf "$NEW_WALLPAPER" "$CURRENT_LINK"
 
-magick "$NEW_WALLPAPER" -resize 500x500^ -gravity center -extent 500x500 -strip "$HOME/.cache/rofi-wallpaper.jpg"
+magick "$NEW_WALLPAPER" -resize 500x500^ -gravity center -extent 500x500 -strip "/tmp/rofi-wallpaper.jpg"

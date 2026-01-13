@@ -32,7 +32,7 @@ in {
       "$mainMod,       P, pin,"
       "$mainMod,       J, togglesplit,"
       "$mainMod SHIFT, E, exec, wlogout"
-      "$mainMod,       V, exec, cliphist list | $menu --dmenu | cliphist decode | wl-copy"
+      "$mainMod,       V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
       "$mainMod,       B, exec, pkill -SIGUSR2 waybar"
       "$mainMod SHIFT, B, exec, pkill -SIGUSR1 waybar"
       "$mainMod SHIFT, I, exec, hyprlock"

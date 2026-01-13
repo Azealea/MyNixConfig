@@ -58,7 +58,7 @@
     imagebox {
       padding:                     20px;
       background-color:            transparent;
-      background-image:            url("~/.cache/rofi-wallpaper.jpg");
+      background-image:            url("/tmp/rofi-wallpaper.jpg");
       background-size: 100%;
       orientation:                 vertical;
       children:                    [ "inputbar", "dummy", "mode-switcher" ];
