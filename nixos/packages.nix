@@ -9,6 +9,7 @@
 
     kitty
     rofi
+    imagemagick
     #			wofi
     vscode
     discord

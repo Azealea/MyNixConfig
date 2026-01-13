@@ -1,62 +1,97 @@
+/* ~/.config/wofi/style.css */
+
+/* ---- Theme variables (GTK CSS doesn't have true vars like rofi; we just reuse values) ---- */
 window {
-    font-family: "JetBrainsMono Nerd Font";
-    font-size: 10pt;
-
-    background-color: rgba(0, 0, 0, 0.0); /* Transparent */
-    border: none;
-    padding: 0;
-    margin: 0;
+  background-color: #0F1417;
+  border-radius: 15px;
+  border: 0px solid transparent;
+  font-family: "Product Sans Bold";
+  font-size: 12px;
 }
 
-#input {
-    background-color: transparent;
-    padding: 0;
-    margin: 0;
-    /* background-image: url("~/nixMine/Wallpaper/frieren.jpg"); */
-    background-size: cover;
-    background-position: center;
-    color: #ffffff;
-}
-
-#entry {
-    padding: 0.5em;
-    margin: 0.5em;
-    color: #ffffff;
-    background-color: transparent;
-}
-
-#entry:selected {
-    background-color: rgba(100, 100, 255, 0.2);
-    color: #ffffff; /* @select-fg */
-}
-
+/* Main container */
 #outer-box {
-    padding: 0;
-    margin: 0;
+  padding: 20px;
+  background-color: transparent;
 }
 
+/* Wofi main box */
+#inner-box {
+  background-color: transparent;
+  padding: 0px;
+}
+
+/* Input bar (search) */
+#input {
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #1E333C;
+  color: #ACC7FF;
+  border: 0px solid transparent;
+}
+
+/* Placeholder color (GTK-ish) */
+#input * {
+  color: #ACC7FF;
+}
+#input:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+/* The scroll area/list container */
 #scroll {
-    padding: 1em 2em;
-    background-color: rgba(20, 20, 20, 0.7);
+  margin-top: 20px;
+  background-color: transparent;
 }
 
-#text {
-    padding-left: 1em;
-    color: #ffffff; /* @main-fg */
+/* Entries list */
+#entry {
+  padding: 8px;
+  border-radius: 10px;
+  background-color: transparent;
+  color: #ACC7FF;
 }
 
-#img {
-    margin-right: 1em;
-    background-color: transparent;
-    size: 2.2em;
+/* Entry content layout */
+#entry #text {
+  margin-left: 10px;
+  color: inherit;
 }
 
-/* Optional: error message style
-#error {
-    color: #ffffff;
-    background-color: rgba(20, 20, 20, 0.8);
-    text-transform: capitalize;
-    padding: 1em;
-    text-align: center;
-} */
+/* Icons */
+#entry #img {
+  margin-right: 10px;
+}
+
+/* Selected entry */
+#entry:selected {
+  background-color: #ACC7FF;
+  color: #1E333C;
+}
+
+/* If wofi marks urgent entries (some builds/themes do via :urgent) */
+#entry:urgent {
+  background-color: #8E3596;
+  color: #ACC7FF;
+}
+#entry:selected:urgent {
+  background-color: #8E3596;
+  color: #ACC7FF;
+}
+
+/* Optional: message / no results */
+#message {
+  margin-top: 10px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #1E333C;
+  color: #ACC7FF;
+}
+
+/* Optional: scrollbar hidden-ish (wofi often has none, but just in case) */
+scrollbar, scrollbar * {
+  background-color: transparent;
+  border: none;
+}
 

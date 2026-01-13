@@ -1,19 +1,28 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
 WALLPAPER_DIR="$CONFIG_DIR/Wallpaper"
-STATE_FILE="/tmp/.current_wallpaper_index"
-DIRECTION="$1"
+CURRENT_LINK="$HOME/.cache/current-wallpaper"
+DIRECTION="${1:-next}"
 
-mapfile -t WALLPAPERS < <(find "$WALLPAPER_DIR" | sort)
+mapfile -t WALLPAPERS < <(find "$WALLPAPER_DIR" -type f | sort)
 
 COUNT=${#WALLPAPERS[@]}
-[ $COUNT -eq 0 ] && exit 1
+[ "$COUNT" -eq 0 ] && exit 1
 
-if [ -f "$STATE_FILE" ]; then
-    INDEX=$(cat "$STATE_FILE")
+if [ -L "$CURRENT_LINK" ]; then
+    CURRENT_WALLPAPER="$(readlink -f "$CURRENT_LINK")"
 else
-    INDEX=0
+    CURRENT_WALLPAPER=""
 fi
+
+INDEX=0
+for i in "${!WALLPAPERS[@]}"; do
+    if [ "${WALLPAPERS[$i]}" = "$CURRENT_WALLPAPER" ]; then
+        INDEX="$i"
+        break
+    fi
+done
 
 if [ "$DIRECTION" = "next" ]; then
     INDEX=$(( (INDEX + 1) % COUNT ))
@@ -21,7 +30,11 @@ elif [ "$DIRECTION" = "prev" ]; then
     INDEX=$(( (INDEX - 1 + COUNT) % COUNT ))
 fi
 
-echo "$INDEX" > "$STATE_FILE"
+NEW_WALLPAPER="${WALLPAPERS[$INDEX]}"
 
-swww img "${WALLPAPERS[$INDEX]}" --transition-type any --transition-duration 3
-# types  : center , random , simple, any
+swww img "$NEW_WALLPAPER" --transition-type any --transition-duration 3
+
+mkdir -p "$HOME/.cache"
+ln -sf "$NEW_WALLPAPER" "$CURRENT_LINK"
+
+magick "$NEW_WALLPAPER" -resize 500x500^ -gravity center -extent 500x500 -strip "$HOME/.cache/rofi-wallpaper.jpg"

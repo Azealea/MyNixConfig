@@ -28,20 +28,20 @@ in {
       "$mainMod,       R, exec, $fileManager"
       "$mainMod,       F, fullscreen,"
       "$mainMod SHIFT, SPACE, togglefloating,"
-      "$mainMod,       D, exec, $menu --show drun"
+      "$mainMod,       D, exec, rofi -show drun"
       "$mainMod,       P, pin,"
       "$mainMod,       J, togglesplit,"
       "$mainMod SHIFT, E, exec, wlogout"
       "$mainMod,       V, exec, cliphist list | $menu --dmenu | cliphist decode | wl-copy"
       "$mainMod,       B, exec, pkill -SIGUSR2 waybar"
       "$mainMod SHIFT, B, exec, pkill -SIGUSR1 waybar"
-      "$mainMod SHIFT, I, exec, loginctl lock-session"
-      "$mainMod,       ?, exec, hyprpicker -an"
+      "$mainMod SHIFT, I, exec, hyprlock"
+      "$mainMod,       =, exec, hyprpicker -an"
       "$mainMod,       N, exec, swaync-client -t"
-      ", Print, exec, grimblast --notify --freeze copysave area"
-      "$mainMod,       W, exec, ${booksScript}/bin/open_books"
-      "$mainMod,       P, exec, hyprshot -m region -o ~/Img"
-      "$mainMod SHIFT, P, exec, hyprshot -m output -m active -o ~/Img"
+      # "$mainMod S, exec, grimblast --notify --freeze copysave area"
+      # "$mainMod,       W, exec, ${booksScript}/bin/open_books"
+      "$mainMod,       S, exec, hyprshot -m region -o ~/Img"
+      "$mainMod SHIFT, S, exec, hyprshot -m output -m active -o ~/Img"
       "$mainMod ALT_LEFT, left, exec, ${configDir}/Scripts/wallpaperchange.sh prev"
       "$mainMod ALT_LEFT, right, exec, ${configDir}/Scripts/wallpaperchange.sh next"
 
@@ -100,8 +100,8 @@ in {
       "$mainMod SHIFT, 0, movetoworkspacesilent, 10"
 
       # Scratchpad
-      # "$mainMod,       S, togglespecialworkspace,  magic"
-      # "$mainMod SHIFT, S, movetoworkspace, special:magic"
+      "$mainMod,       X, togglespecialworkspace,  magic"
+      "$mainMod SHIFT, X, movetoworkspace, special:magic"
     ];
 
     # Move/resize windows with mainMod + LMB/RMB and dragging

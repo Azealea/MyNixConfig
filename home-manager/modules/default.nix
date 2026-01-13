@@ -8,6 +8,7 @@
     ./vim.nix
     ./kitty.nix
     ./wofi/wofi.nix
+    ./rofi.nix
     ./gtk.nix
     ./direnv.nix
   ];
