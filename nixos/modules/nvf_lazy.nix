@@ -6,7 +6,15 @@
       viAlias = true;
       vimAlias = true;
 
+      options = {
+        tabstop = 4;
+        shiftwidth = 4;
+        softtabstop = 0;
+        expandtab = false;
+      };
+
       debugMode = {
+        enable = true;
         logFile = "/tmp/nvim.log";
       };
 
@@ -111,7 +119,7 @@
         leetcode-nvim.enable = false;
         smart-splits.enable = false;
 
-        suround.enable = true;
+        surround.enable = true;
 
         multicursors.enable = true;
       };
