@@ -5,14 +5,14 @@
     settings = {
       mainBar = {
         layer = "top";
-        output = ["eDP-1"];
+        #  output = ["eDP-1"];
         position = "top";
-        mod = "dock";
-        height = 28;
-        exclusive = true;
-        passthrough = false;
-        gtk-layer-shell = true;
-        reload_style_on_change = true;
+        #mod = "dock";
+        height = 20;
+        #exclusive = true;
+        #passthrough = false;
+        #        gtk-layer-shell = true;
+        #reload_style_on_change = true;
 
         modules-left = ["custom/padd" "custom/l_end" "cpu" "memory" "custom/cpuinfo" "custom/gpuinfo" "custom/r_end" "custom/l_end" "idle_inhibitor" "clock" "custom/r_end" "custom/padd"];
         modules-center = ["custom/padd" "custom/l_end" "hyprland/workspaces" "hyprland/window" "custom/r_end" "custom/padd"];

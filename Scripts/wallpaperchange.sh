@@ -2,7 +2,7 @@
 set -euo pipefail
 
 WALLPAPER_DIR="$CONFIG_DIR/Wallpaper"
-CURRENT_LINK="$HOME/.cache/current-wallpaper"
+CURRENT_LINK="/tmp/current-wallpaper"
 DIRECTION="${1:-next}"
 
 mapfile -t WALLPAPERS < <(find "$WALLPAPER_DIR" -type f | sort)
@@ -34,7 +34,6 @@ NEW_WALLPAPER="${WALLPAPERS[$INDEX]}"
 
 swww img "$NEW_WALLPAPER" --transition-type any --transition-duration 3
 
-mkdir -p "$HOME/.cache"
 ln -sf "$NEW_WALLPAPER" "$CURRENT_LINK"
 
 magick "$NEW_WALLPAPER" -resize 500x500^ -gravity center -extent 500x500 -strip "/tmp/rofi-wallpaper.jpg"

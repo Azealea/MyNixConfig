@@ -35,7 +35,7 @@ in {
       "$mainMod,       V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
       "$mainMod,       B, exec, pkill -SIGUSR2 waybar"
       "$mainMod SHIFT, B, exec, pkill -SIGUSR1 waybar"
-      "$mainMod SHIFT, I, exec, hyprlock"
+      "$mainMod ALT, L, exec, hyprlock"
       "$mainMod,       =, exec, hyprpicker -an"
       "$mainMod,       N, exec, swaync-client -t"
       # "$mainMod S, exec, grimblast --notify --freeze copysave area"

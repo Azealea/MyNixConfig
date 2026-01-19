@@ -4,9 +4,11 @@
     settings = {
       general = {
         disable_loading_bar = true;
-        grace = 1;
+        ignore_empty_input = true;
         hide_cursor = true;
         no_fade_in = false;
+        no_fade_out = false;
+        grace = 3;
       };
 
       label = {
@@ -14,7 +16,6 @@
         font_size = 96;
         font_family = "JetBrains Mono";
         color = "rgba(235, 219, 178, 1.0)";
-        # position = "0, 600";
         halign = "center";
         walign = "center";
 
@@ -23,7 +24,7 @@
 
       background = [
         {
-          path = "screenshot";
+          path = "/tmp/current-wallpaper";
           blur_passes = 3;
           blur_size = 8;
         }
