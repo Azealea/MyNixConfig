@@ -24,12 +24,10 @@
     nvf,
     ...
   } @ inputs: let
-    system = "x86_64-linux";
     username = "azea";
     configDir = "$HOME/MyNixConfig";
   in {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      inherit system;
       modules = [
         ./nixos/configuration.nix
         nvf.nixosModules.default
@@ -38,7 +36,7 @@
     };
 
     homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
       modules = [./home-manager/home.nix];
       extraSpecialArgs = {inherit inputs username configDir;};
     };

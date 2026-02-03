@@ -104,26 +104,29 @@
         #disable_hyprland_logo = true;
       };
 
-      windowrulev2 = [
-        "bordersize 0, floating:0, onworkspace:w[t1]"
+windowrule = [
 
-        "float,class:(mpv)|(imv)|(showmethekey-gtk)"
-        "move 990 60,size 900 170,pin,noinitialfocus,class:(showmethekey-gtk)"
-        "noborder,nofocus,class:(showmethekey-gtk)"
+  # --- Workspace t1, no border
+  "match:workspace w[t1], border_size 0, float 0"
 
-        "workspace 4,class:(obsidian)"
-        "workspace 5,class:(discord)"
+  # --- Media players and showmethekey float
+  "match:class ^(mpv|imv|showmethekey-gtk)$, float on"
 
-        "suppressevent maximize, class:.*"
-        "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
+  # --- showmethekey pinned overlay
+  "match:class ^(showmethekey-gtk)$, move 990 60, size 900 170, pin on, no_initial_focus on, no_focus on, border_size 0"
 
-        "opacity 0.0 override, class:^(xwaylandvideobridge)$"
-        "noanim, class:^(xwaylandvideobridge)$"
-        "noinitialfocus, class:^(xwaylandvideobridge)$"
-        "maxsize 1 1, class:^(xwaylandvideobridge)$"
-        "noblur, class:^(xwaylandvideobridge)$"
-        "nofocus, class:^(xwaylandvideobridge)$"
-      ];
+  # --- Zen-beta and Discord workspace assignment
+  "match:class ^(zen-beta)$, workspace 1"
+  "match:class ^(discord)$, workspace 5"
+
+  # --- Prevent maximize globally
+  "match:class .*, suppress_event maximize"
+
+  # --- xwaylandvideobridge helper
+  "match:class ^(xwaylandvideobridge)$, opacity 0.0 override, no_anim on, no_initial_focus on, max_size 1 1, no_blur on, no_focus on"
+
+];
+
 
       workspace = [
         "w[tv1], gapsout:0, gapsin:0"
