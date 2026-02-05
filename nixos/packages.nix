@@ -64,9 +64,7 @@
     cliphist
 
     # Sound
-    pipewire
     pavucontrol
-    pulseaudio
     pamixer
 
     # Screenshotting
