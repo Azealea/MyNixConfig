@@ -9,6 +9,5 @@
     ./kitty.nix
     ./rofi.nix
     ./gtk.nix
-    ./direnv.nix
   ];
 }
