@@ -49,6 +49,11 @@
         trouble.enable = true;
       };
 
+      autocomplete = {
+        nvim-cmp.enable = true;
+      };
+      snippets.luasnip.enable = true;
+
       languages = {
         enableTreesitter = true;
         enableFormat = true;

@@ -14,6 +14,19 @@
         desc = "Quit all";
       }
 
+      {
+        mode = "n";
+        key = "<M-j>";
+        action = "<cmd>m +1<cr>";
+        desc = "Switch lines down";
+      }
+      {
+        mode = "n";
+        key = "<M-k>";
+        action = "<cmd>m -2<cr>";
+        desc = "Switch lines down";
+      }
+
       # # Buffers
       {
         mode = "n";
