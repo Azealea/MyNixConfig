@@ -55,7 +55,7 @@
           "exec" = " gpuinfo.sh";
           "return-type" = "json";
           "format" = "{}";
-          "interval" = 10; # once every 10 seconds
+          "interval" = 10;
           "tooltip" = true;
           "max-length" = 1000;
           "on-click" = "gpuinfo.sh --toggle";
@@ -65,7 +65,7 @@
           "exec" = " gpuinfo.sh --use nvidia ";
           "return-type" = "json";
           "format" = "{}";
-          "interval" = 10; # once every 10 seconds
+          "interval" = 10;
           "tooltip" = true;
           "max-length" = 1000;
         };
@@ -74,7 +74,7 @@
           "exec" = " gpuinfo.sh --use amd ";
           "return-type" = "json";
           "format" = "{}";
-          "interval" = 10; # once every 10 seconds
+          "interval" = 10;
           "tooltip" = true;
           "max-length" = 1000;
         };
@@ -83,7 +83,7 @@
           "exec" = " gpuinfo.sh --use intel ";
           "return-type" = "json";
           "format" = "{}";
-          "interval" = 10; # once every 10 seconds
+          "interval" = 10;
           "tooltip" = true;
           "max-length" = 1000;
         };
@@ -137,7 +137,7 @@
           "format" = "  {}";
           "separate-outputs" = true;
           "rewrite" = {
-            "khing@archlinux=(.*)" = "$1 ";
+            "nixos(.*)" = "$1 ";
             "(.*) — Mozilla Firefox" = "$1 󰈹";
             "(.*)Mozilla Firefox" = "Firefox 󰈹";
             "(.*) - Visual Studio Code" = "$1 󰨞";
@@ -222,11 +222,6 @@
           "tooltip" = true;
           "signal" = 20;
         };
-        "custom/keybindhint" = {
-          "format" = " ";
-          "tooltip-format" = " Keybinds";
-          "on-click" = "keybinds_hint.sh";
-        };
 
         "privacy" = {
           "icon-size" = 12;
@@ -253,15 +248,20 @@
 
         "battery" = {
           "states" = {
-            "good" = 95;
-            "warning" = 30;
-            "critical" = 20;
+            "warning" = 20;
+            "critical" = 10;
           };
+          "interval" = 60;
           "format" = "{icon} {capacity}%";
           "format-charging" = " {capacity}%";
           "format-plugged" = " {capacity}%";
-          "format-alt" = "{time} {icon}";
           "format-icons" = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
+
+          "events" = {
+            "on-discharging-warning" = "notify-send -u normal 'Low Battery'";
+            "on-discharging-critical" = "notify-send -u critical -t 200000 'Very Low Battery'";
+            "on-charging-100" = "notify-send -u normal 'Battery Full!'";
+          };
         };
 
         "custom/wallchange" = {
@@ -269,17 +269,7 @@
           "exec" = "echo ; echo 󰆊 switch wallpaper";
           "on-click" = "swwwallpaper.sh -n";
           "on-click-right" = "swwwallpaper.sh -p";
-          "on-click-middle" = "sleep 0.1 && swwwallselect.sh";
-          "interval" = 86400; # // once every day
-          "tooltip" = true;
-        };
-
-        "custom/theme" = {
-          "format" = "{}";
-          "exec" = "echo ; echo 󰟡 switch theme";
-          "on-click" = "themeswitch.sh -n";
-          "on-click-right" = "themeswitch.sh -p";
-          "on-click-middle" = "sleep 0.1 && themeselect.sh";
+          "on-click-middle" = "sleep 0.1 && ~";
           "interval" = 86400; # // once every day
           "tooltip" = true;
         };
@@ -294,22 +284,11 @@
           "tooltip" = true;
         };
 
-        "custom/cliphist" = {
-          "format" = "{}";
-          "exec" = "echo ; echo 󰅇 clipboard history";
-          "on-click" = "sleep 0.1 && cliphist.sh -c";
-          "on-click-right" = "sleep 0.1 && cliphist.sh -d";
-          "on-click-middle" = "sleep 0.1 && cliphist.sh -w";
-          "interval" = 86400; # // once every day
-          "tooltip" = true;
-        };
-
         "custom/power" = {
           "format" = "{}";
           "exec" = "echo ; echo  logout";
           "on-click" = "logoutlaunch.sh 2";
           "on-click-right" = "logoutlaunch.sh 1";
-          "interval" = 86400; # // once every day
           "tooltip" = true;
         };
       };

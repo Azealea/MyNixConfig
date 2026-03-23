@@ -26,6 +26,8 @@
 
   time.timeZone = "Europe/Paris";
 
+  fonts.fontconfig.defaultFonts = {monospace = ["JetBrainsMono Nerd Font"];};
+
   i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.extraLocaleSettings = {

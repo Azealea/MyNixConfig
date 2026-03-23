@@ -11,6 +11,7 @@
         shiftwidth = 4;
         softtabstop = 0;
         expandtab = false;
+        colorcolumn = "80";
       };
 
       theme = {
@@ -20,12 +21,14 @@
         style = "mocha";
       };
 
+      utility.direnv.enable = true;
+      mini.trailspace.enable = true;
+
       ui = {
         borders.enable = true;
         noice.enable = true;
         colorizer.enable = true;
         illuminate.enable = true;
-        smartcolumn.enable = true;
       };
 
       visuals = {
@@ -61,6 +64,14 @@
 
         nix.enable = true;
         clang.enable = true;
+        python = {
+          enable = true;
+          format = {
+            enable = true;
+            type = ["ruff"];
+          };
+          lsp.enable = true;
+        };
       };
 
       git = {

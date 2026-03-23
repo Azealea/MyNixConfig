@@ -19,7 +19,9 @@
     kdePackages.dolphin
     prismlauncher
     dunst
+    libnotify
     networkmanagerapplet
+    krita
 
     # Coding stuff
     man-pages
@@ -70,6 +72,7 @@
     # Screenshotting
     hyprshot
     hyprpicker
+    wl-screenrec
 
     # home manager
     home-manager

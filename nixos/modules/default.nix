@@ -8,5 +8,6 @@
     ./nvf_lazy.nix
     ./nvf_lazy_maps.nix
     ./graphics.nix
+    ./ssh.nix
   ];
 }

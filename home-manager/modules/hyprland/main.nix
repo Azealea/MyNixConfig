@@ -82,7 +82,7 @@
 
       input = {
         kb_layout = "us";
-        kb_options = caps:escape;
+        kb_options = "caps:escape";
         touchpad = {
           natural_scroll = true;
         };
@@ -104,29 +104,11 @@
         #disable_hyprland_logo = true;
       };
 
-windowrule = [
-
-  # --- Workspace t1, no border
-  "match:workspace w[t1], border_size 0, float 0"
-
-  # --- Media players and showmethekey float
-  "match:class ^(mpv|imv|showmethekey-gtk)$, float on"
-
-  # --- showmethekey pinned overlay
-  "match:class ^(showmethekey-gtk)$, move 990 60, size 900 170, pin on, no_initial_focus on, no_focus on, border_size 0"
-
-  # --- Zen-beta and Discord workspace assignment
-  "match:class ^(zen-beta)$, workspace 1"
-  "match:class ^(discord)$, workspace 5"
-
-  # --- Prevent maximize globally
-  "match:class .*, suppress_event maximize"
-
-  # --- xwaylandvideobridge helper
-  "match:class ^(xwaylandvideobridge)$, opacity 0.0 override, no_anim on, no_initial_focus on, max_size 1 1, no_blur on, no_focus on"
-
-];
-
+      windowrule = [
+        "match:workspace w[t1], border_size 0"
+        "match:class ^(zen-beta)$, workspace 1"
+        "match:class ^(discord)$, workspace 5"
+      ];
 
       workspace = [
         "w[tv1], gapsout:0, gapsin:0"
@@ -135,8 +117,8 @@ windowrule = [
     };
 
     extraConfig = ''
-       gesture=3,horizontal,workspace
-       gesture=4,up,dispatcher,exec,hyprlock
-      '';
+      gesture=3,horizontal,workspace
+      gesture=4,up,dispatcher,exec,hyprlock
+    '';
   };
 }
