@@ -26,7 +26,7 @@
     # Coding stuff
     man-pages
     gnumake
-    gcc
+    gcc_latest
     bear
     nodejs
     python3
@@ -43,7 +43,7 @@
     # CLI utils
     tig
     tmate
-    neofetch
+    fastfetch
     file
     tree
     wget
