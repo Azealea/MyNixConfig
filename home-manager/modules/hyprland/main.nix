@@ -1,124 +1,184 @@
 {
   wayland.windowManager.hyprland = {
     enable = true;
+    configType = "lua";
     systemd.enable = true;
     settings = {
+      monitor = {
+        output = "";
+        mode = "1920x1200@30";
+        position = "auto";
+        scale = 1;
+      };
+
       env = [
-        # Hint Electron apps to use Wayland
-        "NIXOS_OZONE_WL,1"
-        "XDG_CURRENT_DESKTOP,Hyprland"
-        "XDG_SESSION_TYPE,wayland"
-        "XDG_SESSION_DESKTOP,Hyprland"
-        "QT_QPA_PLATFORM,wayland"
-        "XDG_SCREENSHOTS_DIR,$HOME/screens"
+        {_args = ["NIXOS_OZONE_WL" "1"];}
+        {_args = ["XDG_CURRENT_DESKTOP" "Hyprland"];}
+        {_args = ["XDG_SESSION_TYPE" "wayland"];}
+        {_args = ["XDG_SESSION_DESKTOP" "Hyprland"];}
+        {_args = ["QT_QPA_PLATFORM" "wayland"];}
+        {_args = ["XDG_SCREENSHOTS_DIR" "$HOME/screens"];}
       ];
 
-      monitor = ",1920x1200@30,auto,1";
-      #       monitor = ",1600x1000@60,auto,1";
-      "$mainMod" = "SUPER";
-      "$terminal" = "kitty";
-      "$menu" = "wofi";
-
-      exec-once = [
-        "awww-daemon"
-        "waybar"
-        "wl-paste --type text --watch cliphist store"
-        "wl-paste --type image --watch cliphist store"
-      ];
-
-      general = {
-        gaps_in = 0;
-        gaps_out = 0;
-
-        border_size = 5;
-
-        "col.active_border" = "rgba(d65d0eff) rgba(98971aff) 45deg";
-        "col.inactive_border" = "rgba(3c3836ff)";
-
-        resize_on_border = true;
-
-        allow_tearing = false;
-        layout = "master";
-      };
-
-      misc = {
-        background_color = "0x00000000";
-        disable_hyprland_logo = "true";
-      };
-
-      decoration = {
-        rounding = 0;
-
-        active_opacity = 1.0;
-        inactive_opacity = 1.0;
-
-        shadow = {
-          enabled = false;
+      config = {
+        general = {
+          gaps_in = 0;
+          gaps_out = 0;
+          border_size = 5;
+          col = {
+            active_border = {
+              colors = ["rgba(d65d0eff)" "rgba(98971aff)"];
+              angle = 45;
+            };
+            inactive_border = "rgba(3c3836ff)";
+          };
+          resize_on_border = true;
+          allow_tearing = false;
+          layout = "master";
         };
 
-        blur = {
-          enabled = false;
-          size = 16;
-          passes = 2;
-          new_optimizations = true;
+        misc = {
+          background_color = "0x00000000";
+          disable_hyprland_logo = true;
+        };
+
+        decoration = {
+          rounding = 0;
+          active_opacity = 1.0;
+          inactive_opacity = 1.0;
+          shadow = {enabled = false;};
+          blur = {
+            enabled = false;
+            size = 16;
+            passes = 2;
+            new_optimizations = true;
+          };
+        };
+
+        animations = {enabled = true;};
+
+        input = {
+          kb_layout = "us";
+          kb_options = "caps:escape";
+          touchpad = {natural_scroll = true;};
+        };
+
+        dwindle = {
+          preserve_split = true;
+        };
+
+        master = {
+          new_status = "slave";
+          new_on_top = true;
+          mfact = 0.5;
         };
       };
 
-      animations = {
-        enabled = true;
-
-        bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
-        # bezier = "myBezier, 0.33, 0.82, 0.9, -0.08";
-
-        animation = [
-          "windows,     1, 7,  myBezier"
-          "windowsOut,  1, 7,  default, popin 80%"
-          "border,      1, 10, default"
-          "borderangle, 1, 8,  default"
-          "fade,        1, 7,  default"
-          "workspaces,  1, 6,  default"
+      curve = {
+        _args = [
+          "myBezier"
+          {
+            type = "bezier";
+            points = [[0.05 0.9] [0.1 1.05]];
+          }
         ];
       };
 
-      input = {
-        kb_layout = "us";
-        kb_options = "caps:escape";
-        touchpad = {
-          natural_scroll = true;
-        };
-      };
-
-      dwindle = {
-        pseudotile = true;
-        preserve_split = true;
-      };
-
-      master = {
-        new_status = "slave";
-        new_on_top = true;
-        mfact = 0.5;
-      };
-
-      misc = {
-        #force_default_wallpaper = 0;
-        #disable_hyprland_logo = true;
-      };
-
-      windowrule = [
-        "match:workspace w[t1], border_size 0"
-        "match:class ^(zen-beta)$, workspace 1"
-        "match:class ^(discord)$, workspace 5"
+      animation = [
+        {
+          leaf = "windows";
+          enabled = true;
+          speed = 7;
+          bezier = "myBezier";
+        }
+        {
+          leaf = "windowsOut";
+          enabled = true;
+          speed = 7;
+          bezier = "default";
+          style = "popin 80%";
+        }
+        {
+          leaf = "border";
+          enabled = true;
+          speed = 10;
+          bezier = "default";
+        }
+        {
+          leaf = "borderangle";
+          enabled = true;
+          speed = 8;
+          bezier = "default";
+        }
+        {
+          leaf = "fade";
+          enabled = true;
+          speed = 7;
+          bezier = "default";
+        }
+        {
+          leaf = "workspaces";
+          enabled = true;
+          speed = 6;
+          bezier = "default";
+        }
       ];
 
-      workspace = [
-        "w[tv1], gapsout:0, gapsin:0"
-        "f[1], gapsout:0, gapsin:0"
+      gesture = [
+        {
+          fingers = 3;
+          direction = "horizontal";
+          action = "workspace";
+        }
+      ];
+
+      window_rule = [
+        {
+          name = "no-border-wtv1";
+          match = {workspace = "w[t1]";};
+          border_size = 0;
+        }
+        {
+          name = "zen-ws1";
+          match = {class = "^(zen-beta)$";};
+          workspace = 1;
+        }
+        {
+          name = "discord-ws5";
+          match = {class = "^(discord)$";};
+          workspace = 5;
+        }
+      ];
+
+      workspace_rule = [
+        {
+          workspace = "w[tv1]";
+          gaps_out = 0;
+          gaps_in = 0;
+        }
+        {
+          workspace = "f[1]";
+          gaps_out = 0;
+          gaps_in = 0;
+        }
       ];
     };
 
     extraConfig = ''
-      gesture=3,horizontal,workspace
-      gesture=4,up,dispatcher,exec,hyprlock
+      hl.on("hyprland.start", function()
+        hl.exec_cmd("awww-daemon")
+        hl.exec_cmd("waybar")
+        hl.exec_cmd("wl-paste --type text --watch cliphist store")
+        hl.exec_cmd("wl-paste --type image --watch cliphist store")
+      end)
+
+
+      hl.gesture({
+        ["action"] = function() hl.exec_cmd("hyprlock") end,
+        ["direction"] = "up",
+        ["fingers"] = 4
+      })
+
     '';
   };
 }
