@@ -58,7 +58,7 @@
     # REALLY IMPORTANT STUFF DONT TOUCH UNLESS U KNOW WHAT TO DO
 
     # Wayland stuff
-    swww
+    awww
     wl-clipboard
 
     # utility

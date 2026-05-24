@@ -20,7 +20,7 @@
       "$menu" = "wofi";
 
       exec-once = [
-        "swww-daemon"
+        "awww-daemon"
         "waybar"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"

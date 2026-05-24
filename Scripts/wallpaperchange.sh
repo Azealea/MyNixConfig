@@ -32,7 +32,7 @@ fi
 
 NEW_WALLPAPER="${WALLPAPERS[$INDEX]}"
 
-swww img "$NEW_WALLPAPER" --transition-type any --transition-duration 3
+awww img "$NEW_WALLPAPER" --transition-type any --transition-duration 3
 
 ln -sf "$NEW_WALLPAPER" "$CURRENT_LINK"
 
