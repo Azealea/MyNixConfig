@@ -13,7 +13,7 @@
         "XDG_SCREENSHOTS_DIR,$HOME/screens"
       ];
 
-      monitor = ",1920x1200@60,auto,1";
+      monitor = ",1920x1200@30,auto,1";
       #       monitor = ",1600x1000@60,auto,1";
       "$mainMod" = "SUPER";
       "$terminal" = "kitty";
@@ -57,7 +57,7 @@
         };
 
         blur = {
-          enabled = true;
+          enabled = false;
           size = 16;
           passes = 2;
           new_optimizations = true;

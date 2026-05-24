@@ -42,8 +42,8 @@ in {
       # "$mainMod,       W, exec, ${booksScript}/bin/open_books"
       "$mainMod,       S, exec, hyprshot -m region -o ~/Img"
       "$mainMod SHIFT, S, exec, hyprshot -m output -m active -o ~/Img"
-      "$mainMod,       R, exec, wl-screenrec -f ~/Img/recording_$(date +%Y-%m-%d_%H-%M-%S).mp4"
-      "$mainMod SHIFT, R, exec, pkill wl-screenrec"
+      "$mainMod,       SEMICOLON, exec, pkill wl-screenrec ;wl-screenrec -b 1MB -m 60 --encode-resolution 960x600 -f ~/Img/recording_$(date +%Y-%m-%d_%H-%M-%S).mp4"
+      "$mainMod SHIFT, SEMICOLON, exec, pkill wl-screenrec"
 
       "$mainMod ALT_LEFT, left, exec, ${configDir}/Scripts/wallpaperchange.sh prev"
       "$mainMod ALT_LEFT, right, exec, ${configDir}/Scripts/wallpaperchange.sh next"
