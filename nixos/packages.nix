@@ -51,6 +51,7 @@
     btop
     unzip
     bat
+    fd
     zip
     bluez
     bluez-tools

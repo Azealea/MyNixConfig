@@ -60,7 +60,10 @@
         input = {
           kb_layout = "us";
           kb_options = "caps:escape";
-          touchpad = {natural_scroll = true;};
+          touchpad = {
+            natural_scroll = true;
+            disable_while_typing = false;
+          };
         };
 
         dwindle = {
