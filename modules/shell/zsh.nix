@@ -7,7 +7,7 @@
   home-manager.users.${username} = {
     programs.zsh = {
       enable = true;
-      dotDir = ".config/zsh";
+      dotDir = "/home/${username}/.config/zsh";
 
       enableCompletion = true;
       autosuggestion.enable = true;
