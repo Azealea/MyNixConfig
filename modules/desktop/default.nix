@@ -9,7 +9,6 @@
     ./rofi.nix
     ./vim.nix
     ./waybar
-    ./wlogout
     ./zen.nix
   ];
 }
