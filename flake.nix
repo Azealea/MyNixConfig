@@ -29,16 +29,26 @@
   in {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       modules = [
-        ./nixos/configuration.nix
+        home-manager.nixosModules.home-manager
         nvf.nixosModules.default
+        ./hosts/nixos
+        ./modules
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.extraSpecialArgs = {inherit inputs username configDir;};
+          home-manager.users.${username}.home = {
+            username = username;
+            homeDirectory = "/home/${username}";
+            stateVersion = "25.05";
+            sessionVariables = {
+              PATH = "$HOME/.local/bin:$PATH";
+              CONFIG_DIR = configDir;
+            };
+          };
+        }
       ];
       specialArgs = {inherit inputs username configDir;};
-    };
-
-    homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
-      modules = [./home-manager/home.nix];
-      extraSpecialArgs = {inherit inputs username configDir;};
     };
   };
 }
