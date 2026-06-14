@@ -16,6 +16,7 @@
     hl.bind(mainMod .. " + P",                 hl.dsp.window.pin())
     hl.bind(mainMod .. " + J",                 hl.dsp.layout("togglesplit"))
     hl.bind(mainMod .. " + SHIFT + E",         hl.dsp.exec_cmd("${configDir}/Scripts/powermenu.sh"))
+    hl.bind(mainMod .. " + SHIFT + P",         hl.dsp.exec_cmd("${configDir}/Scripts/powprofile.sh"))
     hl.bind(mainMod .. " + V",                 hl.dsp.exec_cmd("cliphist list | rofi -dmenu | cliphist decode | wl-copy"))
     hl.bind(mainMod .. " + B",                 hl.dsp.exec_cmd("pkill -SIGUSR2 waybar"))
     hl.bind(mainMod .. " + SHIFT + B",         hl.dsp.exec_cmd("pkill -SIGUSR1 waybar"))
