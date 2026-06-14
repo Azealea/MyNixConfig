@@ -25,7 +25,6 @@
     vim
     pcmanfm
     prismlauncher
-    dunst
     libnotify
     networkmanagerapplet
     krita
