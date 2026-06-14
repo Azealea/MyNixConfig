@@ -12,17 +12,16 @@ cp /etc/nixos/hardware-configuration.nix ~/MyNixConfig/
 
 ## TODO
 
-- [ ] nicer dolphin theme
 - [ ] more scripts to have a better desktop experience:
     - [ ] power profile selector
     - [X] exit menu -> wlogout
     - [ ] make brighnesstctl wrapper
-- [ ] configure rofi or wofi to have a better theme
+- [X] configure rofi to have a better theme
 - [X] better mouse icon
 - [ ] bluetooth better widget
 - [ ] same for nm
 - [ ] cool widget that'd be funny
 - [X] change ssdm for something else -> changed to ly
-- [X] vim config -> neovim with either lazyvim nix or nvf
-- [ ] boot.loader.systemd-boot.configurationLimit = 5; and garbage collect 
+- [X] vim config -> neovim with nvf
+- [X] boot.loader.systemd-boot.configurationLimit = 5; and garbage collect
 
