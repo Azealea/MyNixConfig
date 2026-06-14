@@ -1,4 +1,6 @@
 {
+  imports = [./keymaps.nix];
+
   programs.nvf = {
     enable = true;
 
