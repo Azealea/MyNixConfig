@@ -4,7 +4,7 @@
     ./services
     ./desktop
     ./shell
-    ./nvf
+    ./nvim
     ./graphics.nix
     ./packages.nix
     ./user.nix

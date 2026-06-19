@@ -13,7 +13,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
-    nvf.url = "github:notashelf/nvf";
   };
 
   outputs = {
@@ -21,7 +20,6 @@
     nixpkgs,
     home-manager,
     zen-browser,
-    nvf,
     ...
   } @ inputs: let
     username = "azea";
@@ -30,7 +28,6 @@
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       modules = [
         home-manager.nixosModules.home-manager
-        nvf.nixosModules.default
         ./hosts/nixos
         ./modules
         {
