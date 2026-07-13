@@ -10,7 +10,7 @@
 
   nixpkgs.config = {
     allowUnfree = true;
-    permittedInsecurePackages = ["python-2.7.18.8" "electron-25.9.0"];
+    permittedInsecurePackages = [];
   };
 
   environment.systemPackages = with pkgs; [
@@ -19,7 +19,7 @@
     rofi
     imagemagick
     vscode
-    discord
+    vesktop
     gparted
     obsidian
     vim
@@ -41,6 +41,7 @@
     gdb
     lua
     meld
+    uv
 
     # CLI utils
     tig
@@ -54,6 +55,7 @@
     unzip
     bat
     fd
+    ripgrep
     zip
     bluez
     bluez-tools
