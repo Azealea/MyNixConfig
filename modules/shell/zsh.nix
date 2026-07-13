@@ -26,6 +26,14 @@
         vim = "nvim";
       };
 
+      initContent = ''
+        maked() { make DEFS="$1" "''${@:2}"; }
+        latest() { echo ~/Downloads/$(ls -t ~/Downloads | head -1); }
+        mkcd() { mkdir -p "$1" && cd "$1"; }
+        groo() { cd $(git rev-parse --show-toplevel); }
+        gotemp() { cd $(mktemp -d); }
+      '';
+
       history.size = 10000;
       history.path = "/home/${username}/.local/share/zsh/history";
 
