@@ -18,10 +18,8 @@
     kitty
     rofi
     imagemagick
-    vscode
     vesktop
     gparted
-    obsidian
     vim
     pcmanfm
     prismlauncher
@@ -57,18 +55,18 @@
     fd
     ripgrep
     zip
-    bluez
-    bluez-tools
 
     # REALLY IMPORTANT STUFF DONT TOUCH UNLESS U KNOW WHAT TO DO
 
     # Wayland stuff
     awww
     wl-clipboard
+    swaynotificationcenter
 
     # utility
     brightnessctl
     cliphist
+    playerctl
 
     # Sound
     pavucontrol

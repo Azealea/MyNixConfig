@@ -16,6 +16,8 @@
       llvmPackages_latest.clang-tools
       alejandra
       ruff
+      ripgrep
+      rust-analyzer
     ];
 
     plugins = with pkgs.vimPlugins; [
@@ -32,7 +34,7 @@
       }
 
       {
-        plugin = nvim-treesitter.withPlugins (p: with p; [c cpp python nix lua bash]);
+        plugin = nvim-treesitter.withPlugins (p: with p; [c cpp python nix lua bash rust]);
         type = "lua";
         config = ''
           vim.api.nvim_create_autocmd("FileType", {
@@ -98,7 +100,7 @@
           			},
           			},
           			})
-          vim.lsp.enable({ "clangd", "nixd", "pyright" })
+          vim.lsp.enable({ "clangd", "nixd", "pyright", "rust_analyzer" })
 
           	vim.diagnostic.config({
           			virtual_text     = true,
@@ -108,7 +110,7 @@
           			})
 
           vim.api.nvim_create_autocmd("BufWritePre", {
-          		pattern = { "*.c", "*.cpp", "*.h", "*.py", "*.nix" },
+          		pattern = { "*.c", "*.cpp", "*.h", "*.py", "*.nix", "*.rs" },
           		callback = function()
           		vim.lsp.buf.format({ async = false, timeout_ms = 3000 })
           		end,
@@ -156,7 +158,16 @@
       {
         plugin = telescope-nvim;
         type = "lua";
-        config = ''require("telescope").setup()'';
+        config = ''
+          require("telescope").setup({
+            defaults = {
+              vimgrep_arguments = {
+                "rg", "--color=never", "--no-heading", "--with-filename",
+                "--line-number", "--column", "--smart-case", "--hidden",
+              },
+            },
+          })
+        '';
       }
     ];
 
@@ -177,6 +188,8 @@
       local map = function(m, k, v, d)
       vim.keymap.set(m, k, v, { silent = true, desc = d })
       end
+
+      vim.keymap.set("x", "p", '"_dP')
 
       map("n", "<S-l>", "<cmd>bn<cr>", "Next buffer")
       map("n", "<S-h>", "<cmd>bp<cr>", "Prev buffer")

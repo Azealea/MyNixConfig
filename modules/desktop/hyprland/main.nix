@@ -33,7 +33,7 @@
             inactive_border = "rgba(3c3836ff)";
           };
           resize_on_border = true;
-          allow_tearing = false;
+          allow_tearing = true;
           layout = "master";
         };
 
@@ -145,22 +145,14 @@
           workspace = 1;
         }
         {
-          name = "discord-ws5";
-          match = {class = "^(discord)$";};
+          name = "vesktop-ws5";
+          match = {class = "^(vesktop)$";};
           workspace = 5;
         }
-      ];
-
-      workspace_rule = [
         {
-          workspace = "w[tv1]";
-          gaps_out = 0;
-          gaps_in = 0;
-        }
-        {
-          workspace = "f[1]";
-          gaps_out = 0;
-          gaps_in = 0;
+          name = "tearing-games";
+          match = {class = "^(steam_app_)";};
+          immediate = true;
         }
       ];
     };
@@ -169,6 +161,7 @@
       hl.on("hyprland.start", function()
         hl.exec_cmd("awww-daemon")
         hl.exec_cmd("waybar")
+        hl.exec_cmd("swaync")
         hl.exec_cmd("wl-paste --type text --watch cliphist store")
         hl.exec_cmd("wl-paste --type image --watch cliphist store")
       end)

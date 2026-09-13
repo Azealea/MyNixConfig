@@ -1,4 +1,8 @@
-{username, ...}: {
+{
+  username,
+  configDir,
+  ...
+}: {
   home-manager.users.${username}.programs.waybar = {
     enable = true;
     style = ./style.css;
@@ -267,9 +271,8 @@
         "custom/wallchange" = {
           "format" = "{}";
           "exec" = "echo ; echo 󰆊 switch wallpaper";
-          "on-click" = "swwwallpaper.sh -n";
-          "on-click-right" = "swwwallpaper.sh -p";
-          "on-click-middle" = "sleep 0.1 && ~";
+          "on-click" = "${configDir}/Scripts/wallpaperchange.sh next";
+          "on-click-right" = "${configDir}/Scripts/wallpaperchange.sh prev";
           "interval" = 86400; # // once every day
           "tooltip" = true;
         };
