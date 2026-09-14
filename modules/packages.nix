@@ -16,8 +16,6 @@
   environment.systemPackages = with pkgs; [
     # Desktop apps
     kitty
-    rofi
-    imagemagick
     vesktop
     gparted
     vim
@@ -59,22 +57,16 @@
     # REALLY IMPORTANT STUFF DONT TOUCH UNLESS U KNOW WHAT TO DO
 
     # Wayland stuff
-    awww
     wl-clipboard
-    swaynotificationcenter
 
     # utility
-    brightnessctl
-    cliphist
-    playerctl
+    hyprpicker
 
     # Sound
     pavucontrol
     pamixer
 
     # Screenshotting
-    hyprshot
-    hyprpicker
     wl-screenrec
   ];
 

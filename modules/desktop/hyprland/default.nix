@@ -1,9 +1,7 @@
 {
   imports = [
     ./binds.nix
-    ./hypridle.nix
-    ./hyprlock.nix
-./main.nix
+    ./main.nix
   ];
 
   programs.hyprland.enable = true;

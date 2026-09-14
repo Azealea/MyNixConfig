@@ -154,20 +154,18 @@
           match = {class = "^(steam_app_)";};
           immediate = true;
         }
+        {
+          name = "noctalia-settings";
+          match = {class = "^(dev.noctalia.Noctalia)$";};
+          float = true;
+          size = [1080 920];
+        }
       ];
     };
 
     extraConfig = ''
-      hl.on("hyprland.start", function()
-        hl.exec_cmd("awww-daemon")
-        hl.exec_cmd("waybar")
-        hl.exec_cmd("swaync")
-        hl.exec_cmd("wl-paste --type text --watch cliphist store")
-        hl.exec_cmd("wl-paste --type image --watch cliphist store")
-      end)
-
       hl.gesture({
-        ["action"] = function() hl.exec_cmd("hyprlock") end,
+        ["action"] = function() hl.exec_cmd("noctalia msg session lock") end,
         ["direction"] = "up",
         ["fingers"] = 4
       })
