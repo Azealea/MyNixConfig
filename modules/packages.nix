@@ -38,10 +38,11 @@
     lua
     meld
     uv
+    ccache
+    pkg-config
 
     # CLI utils
     tig
-    tmate
     fastfetch
     file
     tree
@@ -53,6 +54,7 @@
     fd
     ripgrep
     zip
+    dust
 
     # REALLY IMPORTANT STUFF DONT TOUCH UNLESS U KNOW WHAT TO DO
 

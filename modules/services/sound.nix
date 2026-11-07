@@ -7,4 +7,5 @@
     wireplumber.enable = true;
   };
   services.pulseaudio.enable = false;
+  services.speechd.enable = false;
 }
