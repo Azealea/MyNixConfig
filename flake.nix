@@ -13,10 +13,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
-    noctalia = {
-      url = "github:noctalia-dev/noctalia";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = {
@@ -24,7 +20,6 @@
     nixpkgs,
     home-manager,
     zen-browser,
-    noctalia,
     ...
   } @ inputs: let
     username = "azea";
@@ -33,13 +28,11 @@
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       modules = [
         home-manager.nixosModules.home-manager
-        noctalia.nixosModules.default
         ./hosts/nixos
         ./modules
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.sharedModules = [noctalia.homeModules.default];
           home-manager.extraSpecialArgs = {inherit inputs username configDir;};
           home-manager.users.${username}.home = {
             username = username;
